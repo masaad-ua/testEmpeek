@@ -19,17 +19,18 @@ export default class ItemsEmpeek implements OnInit {
         this.itemsArrayKey = "itemsEmpeek";
         if(this.localStorageService.getLocalStorage(this.itemsArrayKey)){
             this.itemsArray = this.localStorageService.getLocalStorage(this.itemsArrayKey);
-            this.chosenElement = this.itemsArray.filter((elem, index, arr)=>{
+            this.itemsArray.forEach((elem, index, arr)=>{
                 if(elem.chosen === true){
-                    return elem;
+                    this.chosenElement = elem;
                 }
             });
-            this.chosenElement = this.chosenElement[0];
+            (typeof this.chosenElement === 'undefined') && (this.chosenElement = {});
         }
         else{
             this.localStorageService.setLocalStorage(this.itemsArrayKey,[]);
             this.itemsArray = [];
             this.chosenElement = {};
+
         }
         this.item = "";
     }

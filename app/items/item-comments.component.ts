@@ -14,7 +14,7 @@ export default class CommentsEmpeek{
 
     @Input()
     set chosenElement(arg: any) {
-        console.log("1");
+        console.log(arg);
         this._chosenElement = arg;
         if(this._chosenElement.hasOwnProperty('comments')){
             this.commentsArray = this._chosenElement.comments;

@@ -57,6 +57,7 @@ module.exports = {
 		new webpack.optimize.CommonsChunkPlugin({
 			name: ['app', 'polyfills']
 		}),
+		//new UglifyJSPlugin(),
 		new ExtractTextPlugin('[name].css'),
 		new webpack.NoEmitOnErrorsPlugin(),
 		new webpack.LoaderOptionsPlugin({

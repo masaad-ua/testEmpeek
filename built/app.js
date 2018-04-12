@@ -69486,16 +69486,17 @@ var core_1 = __webpack_require__(27);
 var shared_1 = __webpack_require__(86);
 var ItemsEmpeek = /** @class */ (function () {
     function ItemsEmpeek(localStorageService) {
+        var _this = this;
         this.localStorageService = localStorageService;
         this.itemsArrayKey = "itemsEmpeek";
         if (this.localStorageService.getLocalStorage(this.itemsArrayKey)) {
             this.itemsArray = this.localStorageService.getLocalStorage(this.itemsArrayKey);
-            this.chosenElement = this.itemsArray.filter(function (elem, index, arr) {
+            this.itemsArray.forEach(function (elem, index, arr) {
                 if (elem.chosen === true) {
-                    return elem;
+                    _this.chosenElement = elem;
                 }
             });
-            this.chosenElement = this.chosenElement[0];
+            (typeof this.chosenElement === 'undefined') && (this.chosenElement = {});
         }
         else {
             this.localStorageService.setLocalStorage(this.itemsArrayKey, []);
@@ -69581,7 +69582,7 @@ var CommentsEmpeek = /** @class */ (function () {
     Object.defineProperty(CommentsEmpeek.prototype, "chosenElement", {
         get: function () { return this._chosenElement; },
         set: function (arg) {
-            console.log("1");
+            console.log(arg);
             this._chosenElement = arg;
             if (this._chosenElement.hasOwnProperty('comments')) {
                 this.commentsArray = this._chosenElement.comments;
