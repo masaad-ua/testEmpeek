@@ -69502,7 +69502,12 @@ var ItemsEmpeek = /** @class */ (function () {
         this.itemsArrayKey = "itemsEmpeek";
         if (this.localStorageService.getLocalStorage(this.itemsArrayKey)) {
             this.itemsArray = this.localStorageService.getLocalStorage(this.itemsArrayKey);
-            this.chosenElement = this.itemsArray[0] || {};
+            this.chosenElement = this.itemsArray.filter(function (elem, index, arr) {
+                if (elem.chosen === true) {
+                    return elem;
+                }
+            });
+            this.chosenElement = this.chosenElement[0];
         }
         else {
             this.localStorageService.setLocalStorage(this.itemsArrayKey, []);
@@ -69511,6 +69516,8 @@ var ItemsEmpeek = /** @class */ (function () {
         }
         this.item = "";
     }
+    ItemsEmpeek.prototype.ngOnInit = function () {
+    };
     ItemsEmpeek.prototype.addItem = function () {
         this.lastId = this.localStorageService.getLastIdLocalStorage(this.itemsArrayKey);
         this.itemsArray.push({
@@ -69614,6 +69621,7 @@ var CommentsEmpeek = /** @class */ (function () {
             });
             this.localStorageService.setLocalStorage("itemsEmpeek", items);
             event.currentTarget.reset();
+            this.colorComment = "#E6E6E6";
         }
     };
     CommentsEmpeek.prototype.changeColorComponent = function (event) {

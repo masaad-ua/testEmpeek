@@ -46,6 +46,7 @@ export default class CommentsEmpeek{
             });
             this.localStorageService.setLocalStorage("itemsEmpeek", items);
             event.currentTarget.reset();
+            this.colorComment = "#E6E6E6";
         }
 
     }

@@ -6,7 +6,7 @@ import {Item, Comment, LocalStorageService } from '../shared/shared'
     templateUrl: 'items.component.html'
 })
 
-export default class ItemsEmpeek {
+export default class ItemsEmpeek implements OnInit {
     itemsArray: Array<Item>;
     itemsArrayKey: string;
     item: string;
@@ -19,7 +19,12 @@ export default class ItemsEmpeek {
         this.itemsArrayKey = "itemsEmpeek";
         if(this.localStorageService.getLocalStorage(this.itemsArrayKey)){
             this.itemsArray = this.localStorageService.getLocalStorage(this.itemsArrayKey);
-            this.chosenElement = this.itemsArray[0] || {};
+            this.chosenElement = this.itemsArray.filter((elem, index, arr)=>{
+                if(elem.chosen === true){
+                    return elem;
+                }
+            });
+            this.chosenElement = this.chosenElement[0];
         }
         else{
             this.localStorageService.setLocalStorage(this.itemsArrayKey,[]);
@@ -27,6 +32,10 @@ export default class ItemsEmpeek {
             this.chosenElement = {};
         }
         this.item = "";
+    }
+
+    ngOnInit(): void{
+
     }
 
     addItem():void {
