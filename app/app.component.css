@@ -1,0 +1,123 @@
+/*Sidebar-container*/
+.sidebar-container{
+	background: #2B2F3E;
+	padding: 16px 40px 0px 28px;
+	color: white;
+}
+.content-container{
+	flex-grow: 1;
+	background: #F9F9F9;
+	padding: 33px 16px 0px 30px;
+}
+/***/
+.sidebar-container .text{
+	font-size: 18px;
+	color: #808080;
+}
+
+/*Items-container*/
+.items-container{
+	background: #FFFFFF;
+	height: auto;
+	padding: 9px 15px 0px 27px;
+	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
+	position: relative;
+	min-height: 525px;
+}
+.items-container.second{
+	padding: 9px 15px 0px 20px;
+	min-width: 445px;
+}
+/***/
+.add-item-form{
+	height: 40px;
+	margin-top: 14px;
+	margin-bottom: 8px;
+}
+
+/***/
+.item{
+	border-bottom: 1px solid #F2F2F2;
+	font-weight: 600;
+	padding: 10px 0px 9px 0px;
+	position: relative;
+}
+.item.second{
+	padding: 15px 0px 35px 0px;
+}
+.item.active::before{
+	content: "";
+	position: absolute;
+	right: calc(100% + 25px);
+	top: 50%;
+	transform: translate( 0%, -50%);
+	background: #FF3159;
+	height: 100%;
+	width: 5px;
+}
+.comments-wrapper{
+	margin-top: 26px;
+}
+.comment-from{
+	margin-bottom: 10px;
+}
+/***/
+.item-count{
+	color: white;
+	display: inline-block;
+	background: #27CCC0;
+	padding: 0px 10px;
+	border-radius: 10px;
+	margin-left: 3px;
+}
+.btn{
+	border-radius: 5px;
+	font-size: 16px;
+}
+.btn-delete{
+	border: 1px solid #FF3159;
+	background: white;
+	height: 36px;
+	width: 97px;
+	color:  #FF3159;
+}
+.btn-add{
+	background: #27CCC0;
+	color: white;
+	height: 40px;
+	width: 132px;
+}
+.input-item{
+	height: inherit;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px;
+	width: 293px;
+	margin-right: 9px;
+	padding-left: 14px;
+	color: #B3B3B3;
+}
+
+/***/
+input[name="color"]{
+	display: none;
+}
+.comment-color{
+	height: 50px;
+	width: 50px;
+	display: inline-block;
+}
+.comment-textarea{
+	margin: 0px 0px 0px 17px;
+	height: 70px;
+	width: 343px;
+	resize: none;
+	border-color: #CCCCCC;
+}
+
+.comment-text{
+	width: 343px;
+	margin: 0px 0px 0px 17px;
+	font-weight: 300;
+	font-size: 12px;
+	color: #666666;
+}

@@ -1,0 +1,24 @@
+<div class="items-container">
+	<h2 class="title-h2">Items</h2>
+	<form class="add-item-form" (submit) = "addItem()">
+		<input type="text" class="input-item" placeholder="Type name here..." [(ngModel)] = "item" name="item">
+		<button type="submit" class="btn btn-add" >Add new</button>
+	</form>
+	<div *ngFor = "let item of itemsArray; let i = index" class="flexible space-between item align-center"  [ngClass] = "{'active':item.chosen}" (click) = "choseItem(item.id)" [attr.data-item] = "item.id" >
+		<p>
+			<span>{{ item.text }}</span>
+			<span class="item-count">{{ item.comments.length}}</span>
+		</p>
+		<button class="btn btn-delete" (click) = "deleteItem($event, item)">Delete</button>
+	</div>
+</div>
+
+<item-component-empeek class="items-container second"
+                       [chosenElement] = "chosenElement">
+</item-component-empeek>
+
+
+
+
+
+

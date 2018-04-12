@@ -1,0 +1,15 @@
+<h2 class="title-h2">Comments# {{commentsArray.length}}</h2>
+<div class="comments-wrapper">
+	<div class="item second flexible space-between align-left" *ngFor = "let comment of commentsArray">
+		<div [ngStyle]="{'background':comment.color}" class="comment-color"></div>
+		<p class="comment-text">{{comment.text}}</p>
+	</div>
+</div>
+<form action="" (keyup) = "addComment($event)" class="comment-from flexible space-between align-left" *ngIf="chosenElement.hasOwnProperty('comments')">
+	<input type="color" name="color" id="colorComment" [attr.value]="colorComment" (change)="changeColorComponent($event)">
+	<label for="colorComment" class="comment-color" [ngStyle]="{'background':colorComment}"></label>
+	<textarea name="comment"  cols="30" rows="10" class="comment-textarea"></textarea>
+</form>
+
+
+
