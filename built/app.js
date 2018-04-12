@@ -69379,7 +69379,7 @@ var AppComponent = /** @class */ (function () {
     }
     AppComponent = __decorate([
         core_1.Component({
-            selector: 'dairy-app',
+            selector: 'empeek-app',
             template: __webpack_require__(324),
             styles: [__webpack_require__(325)],
             providers: [shared_1.LocalStorageService],

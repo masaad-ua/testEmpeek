@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation} from '@angular/core';
 import { LocalStorageService } from './shared/shared';
 
 @Component({
-    selector: 'dairy-app',
+    selector: 'empeek-app',
     templateUrl: 'app.component.html',
     styleUrls: ['app.component.css'],
     providers: [LocalStorageService],

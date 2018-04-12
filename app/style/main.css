@@ -4,9 +4,14 @@
 	margin: 0;
 	box-sizing: border-box;
 	font-size: 16px;
-	margin: 0px;
 }
 
+body{
+	height: -webkit-fill-available;
+}
+.empeek-app{
+	height: inherit;
+}
 ul {
 	list-style-type: none;
 }
@@ -96,7 +101,7 @@ a,button{
 	font-family: "OpenSans";
 	font-size: 16px;
 	font-weight: 400;
-	min-height: 800px;
+	height: inherit;
 
 }
 
