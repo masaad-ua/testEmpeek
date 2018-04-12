@@ -69582,7 +69582,6 @@ var CommentsEmpeek = /** @class */ (function () {
     Object.defineProperty(CommentsEmpeek.prototype, "chosenElement", {
         get: function () { return this._chosenElement; },
         set: function (arg) {
-            console.log(arg);
             this._chosenElement = arg;
             if (this._chosenElement.hasOwnProperty('comments')) {
                 this.commentsArray = this._chosenElement.comments;
